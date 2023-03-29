@@ -1,28 +1,20 @@
-const questions = [
+var questionContainer = document.querySelector(".question-container")
+
+var questions = [
     {
-        question:`What does CSS stand for?`,
-        options:[`Cat Soul Snatcher`, `Carmen Sandigeo Steals`, `Can't Stop Sam`,`Cascading Style Sheet`],
-        answer:3
-    },
-    {
-        question: `What is my favourite fruit?`,
-        options:[`pomegranete`, `clemintines`, `grapes`, `cherries`],
+        question:'What month comes after April?',
+        options:['May','June', 'July','August'],
         answer:0
     },
     {
-        question: `What season is the coldest?`,
-        options:[`winter`,`summer`, `spring`, `fall`],
+        question: 'What month comes after March?',
+        options:['April','May','June','July'],
         answer:0
     },
     {
-        question:`What is not a vegetable?`,
-        options:[`apple`, `carrot`, `grape`, `strawberry`],
-        answer:1
-    },
-    {
-        question:`How many month in a year?`,
-        options:[`12`,`13`,`14`,`15`],
-        answer: 0
+        question: 'What month comes after May?',
+        options:['June','July','August','September'],
+        answer:0
     },
     console.log(questions)
 ]

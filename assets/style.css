@@ -4,25 +4,57 @@
     padding: 20;
     background-color: rgb(223, 216, 216);
 }
-
-body {
+/* Styling for the starter page before questions */
+.starter-page {
     margin:200px;
     padding: 20;
     text-align:center;
     color:purple;
-}
-
-.starter-page {
     max-width: 700px;
-    margin: 30px;
-    padding: 30px;
 }
 
-.btn {
+.starter-page h1 {
+    font-size:xx-large;
+}
+/* Button to start assesment */
+.starter-page .btn {
     padding: 15px 30px;
     background-color: aliceblue;
     color: black;
     border:none;
     border-radius: 20px;
     cursor: pointer;
+}
+
+/* Styling for the questions */
+.question-container .question-text {
+    padding: 20px;
+    /* background-color: aliceblue; */
+    text-align: center;
+    font-size: x-large;
+    border-radius: 15px;
+    color: purple;
+    font-weight:bolder;
+}
+
+.question-container .option-container {
+    padding: 20px;
+    font-size: large;
+    margin: 10px;
+}
+
+.question-container .option-container .option {
+    background-color: aliceblue;
+    border: 15px;
+    margin: 10px;
+    border-radius: 15px;
+    line-height: 15px;
+    padding: 20px;
+    font-size: large;
+    cursor: pointer;
+}
+
+.question-container .answer-display {
+    font-size: x-large;
+    color: aliceblue;
 }
