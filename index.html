@@ -8,11 +8,11 @@
     <title>Quiz HomePage</title>
 </head>
 <body>
-    <div class="starter-page">
+    <div class="starter-page" id="starter-page">
         <h1>CODING QUIZ CHALLENGE</h1>
         <h3>Instructions:</h3>
         <p>Answer 5 questions within 60 seconds!</p>
-        <button class="btn">Start Assesment</button>
+        <button class="btn" id="start-btn">Start Assesment</button>
         <button id="score-btn" class="btn">High Scores</button>
     </div>
     <section class="container">
@@ -24,6 +24,12 @@
                 <button class="option">Answer 3</button>
                 <button class="option">Answer 4</button>
             <div id="answer-display">Right/Wrong</div>
+            <div id="timer"></div>
+        </div>
+        <div id="result-container" class="hide">
+            <div>
+                <h2>Points: <span class="points">0</span> ></span></h2>
+            </div>
         </div>
     </section>
     <script src="./assets/script.js"></script>
