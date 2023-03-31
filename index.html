@@ -15,14 +15,16 @@
         <button class="btn" id="start-btn">Start Assesment</button>
         <button id="score-btn" class="btn">High Scores</button>
     </div>
+    <!-- Quiz Questions -->
     <section class="container">
         <div id="question-container" class="hide">
-            <div id="question-text">Questions</div>
-            <div id="option-container">
-                <button class="option">Answer 1</button>
-                <button class="option">Answer 2</button>
-                <button class="option">Answer 3</button>
-                <button class="option">Answer 4</button>
+            <div id="question-text">Question:</div>
+            <div id="option-container" class="option">
+                <button data-id="1" class="option-text">Choice 1</button>
+                <button data-id="2" class="option-text">Choice 2</button>
+                <button data-id="3" class="option-text">Choice 3</button>
+                <button data-id="4" class="option-text">Choice 4</button>
+            </div>
             <div id="answer-display">Right/Wrong</div>
             <div id="timer"></div>
         </div>
