@@ -5,35 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
-    <title>Quiz HomePage</title>
+    <title></title>
 </head>
 <body>
-    <div class="starter-page" id="starter-page">
-        <h1>CODING QUIZ CHALLENGE</h1>
-        <h3>Instructions:</h3>
-        <p>Answer 5 questions within 60 seconds!</p>
-        <button class="btn" id="start-btn">Start Assesment</button>
-        <button id="score-btn" class="btn">High Scores</button>
-    </div>
-    <!-- Quiz Questions -->
-    <section class="container">
-        <div id="question-container" class="hide">
-            <div id="question-text">Question:</div>
-            <div id="option-container" class="option">
-                <button data-id="1" class="option-text">Choice 1</button>
-                <button data-id="2" class="option-text">Choice 2</button>
-                <button data-id="3" class="option-text">Choice 3</button>
-                <button data-id="4" class="option-text">Choice 4</button>
-            </div>
-            <div id="answer-display">Right/Wrong</div>
-            <div id="timer"></div>
-        </div>
-        <div id="result-container" class="hide">
-            <div>
-                <h2>Points: <span class="points">0</span> ></span></h2>
-            </div>
-        </div>
+<!-- Home Page -->
+<section id="home">
+    <h2>Coding Quiz Challenge</h2>
+    <button id="start">Start</button>
+</section>
+<!-- Question Section -->
+    <section class="hide" id="container">
+    <section id="quiz-container">
+        <h2 id="question-text">Question: </h2>
+        <ul>
+            <button value='0' class="choice" id="choice0">1. </button>
+            <button value='1' class="choice" id="choice1">2. </button>
+            <button value='2' class="choice" id="choice2">3. </button>
+            <button value='3' class="choice" id="choice3">4. </button>
+        </ul>
+        <h3 id="display-answer"></h3>
+    <h3 class="time" style="text-align:right;"></h1>
+        <section id="score"></section>
+
     </section>
-    <script src="./assets/script.js"></script>
+    </section>
+
+
 </body>
+
+<script src="assets/script.js"></script>
 </html>

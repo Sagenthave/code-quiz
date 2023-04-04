@@ -1,60 +1,114 @@
-//triggering the quiz to start
-var startButton = document.getElementById('start-btn');
+
+
+var home = document.getElementById('home')
+var quiz = document.getElementById('container')
+var startButton = document.getElementById('start')
+var questions = document.getElementById('question-text');
+var choice0 = document.getElementById('choice0');
+var choice1 = document.getElementById('choice1');
+var choice2 = document.getElementById('choice2');
+var choice3 = document.getElementById('choice3');
+var answer = document.getElementById('display-answer')
+
+var i=0;
+var score=0;
+
 startButton.addEventListener('click', startQuiz);
-//Added so the home page will disappear and questions will appear in the function startQuiz
-var homePage = document.getElementById('starter-page');
-var questionContainer = document.getElementById('question-container');
-var choices = Array.from(document.getElementsByClassName("option-text"));
-console.log(choices)
 
-var chosenQuestion= {};
-var correctAnswers= true; 
-var score=0
-var questionCounter=0;
-var availableQuestions = [];
+let questionIndex = 0;
+let currentQuestion;
+let availableQuestion = [];
+console.log(questionIndex)
 
-var optionOne = document.getElementById("option1")
-
-var questionArray = [
-    {
-        question: 'What is contained in []?',
-        options: ['array','boolean', 'string','numbers'],
-        correctAnswer: 0
-    },
-    {
-        question: 'A usful tool for debugging is:____?',
-        options: ['console.log','CSS','alerts','booleans'],
-        correctAnswer: 0
-    },
-    {
-        question: 'Commolnly used data type?',
-        options: ['alert','boolean','style','array'],
-        correctAnswer: 0
-    },
-    {
-        question:'What data type is "23"?',
-        options: ['string','numbers','boolean','array'],
-        correctanswer: 0
-    }
-]
 
 function startQuiz () {
-    homePage.style.display = "none";
-    questionContainer.style.display = "block";
-    questionCounter=0;
-    score=0;
-    availableQuestions = [...questionArray]
-    console.log(availableQuestions)
-    for (i=0; i<availableQuestions.length; i++)
-    getNextQuestions()
+    console.log('start')
+    home.style.display = 'none';
+    quiz.style.display = "block";
+    console.log('end')
+    nextQuestion(), changeQuestion()
 }
 
-function getNextQuestions () {
-    questionCounter++;
+//Time Limt: Still need to create score page to default to
+function nextQuestion () {
+var timeEl = document.querySelector(".time");
+var secondsLeft = 10;
+
+function setTime() {
+  // Sets interval in variable
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left";
+
+    if(secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      quiz.style.display = 'none';
+
+    }
+
+  }, 1000);
+}
+setTime()
+
 }
 
+function changeQuestion () {
+    var questionArray = [
+        {
+            question:'What is not a data type?',
+            choices: ['Alert','Boolean','Numbers','String',],
+            answer: 'Alert'
+        },
+        {
+            question:"What is contained in []?",
+            choices: ['Array','Boolean','Alert','Number'],
+            answer: 'array',
+        },
+        {
+            question: 'What is the data type with answer true/false',
+            choices: ['Boolean', 'Number', 'String', 'Javascript'],
+            answer:'boolean',
+        },
+        {
+            question:'Can an object be kept in an array?',
+            choices: ['Yes', 'No', 'Sometimes', '' ],
+            answer:'yes'
+        }
+    ]
+    document.getElementById('question-text').innerHTML = 'Question: ' + questionArray[questionIndex].question
+    document.getElementById('choice0').innerHTML ='1. ' + questionArray[questionIndex].choices[0]
+    document.getElementById('choice1').innerHTML ='2. ' + questionArray[questionIndex].choices[1]
+    document.getElementById('choice2').innerHTML = questionArray[questionIndex].choices[2]
+    document.getElementById('choice3').innerHTML = questionArray[questionIndex].choices[3]
+    console.log('working?')
+    questionIndex++
+console.log(questionIndex)
 
-function selectAnswer() {
+if (questionArray[0] === 'choice0') {
+    answer === true
+}
 
 }
+console.log(questionIndex)
+
+
+document.getElementById('choice0').addEventListener('click', changeQuestion)
+document.getElementById('choice1').addEventListener('click', changeQuestion)
+document.getElementById('choice2').addEventListener('click', changeQuestion)
+document.getElementById('choice3').addEventListener('click', changeQuestion)
+
+// choices = document.getElementsByClassName('choice');
+// if (choice0 || choice1 || choice2 || choice3) {
+//     choices.addEventListener('click', nextQuestion)
+// }
+
+
+
+
+
+
+
+
+
 
