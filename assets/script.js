@@ -1,5 +1,5 @@
 
-
+// Global variables
 var home = document.getElementById('home')
 var quiz = document.getElementById('container')
 var startButton = document.getElementById('start')
@@ -12,10 +12,15 @@ var answer = document.getElementById('display-answer')
 
 var i=0;
 var score=0;
+var acceptingAnswers = false; 
+var count = localStorage.getItem('count')
+
+//Start quiz. Hides start page and displays questions
 
 startButton.addEventListener('click', startQuiz);
 
 let questionIndex = 0;
+let answerIndex = 0;
 let currentQuestion;
 let availableQuestion = [];
 console.log(questionIndex)
@@ -58,7 +63,7 @@ function changeQuestion () {
         {
             question:'What is not a data type?',
             choices: ['Alert','Boolean','Numbers','String',],
-            answer: 'Alert'
+            answer: 'value'
         },
         {
             question:"What is contained in []?",
@@ -72,23 +77,18 @@ function changeQuestion () {
         },
         {
             question:'Can an object be kept in an array?',
-            choices: ['Yes', 'No', 'Sometimes', '' ],
+            choices: ['Yes', 'No', 'Sometimes', 'Can but should be avoided' ],
             answer:'yes'
         }
     ]
     document.getElementById('question-text').innerHTML = 'Question: ' + questionArray[questionIndex].question
-    document.getElementById('choice0').innerHTML ='1. ' + questionArray[questionIndex].choices[0]
-    document.getElementById('choice1').innerHTML ='2. ' + questionArray[questionIndex].choices[1]
-    document.getElementById('choice2').innerHTML = questionArray[questionIndex].choices[2]
-    document.getElementById('choice3').innerHTML = questionArray[questionIndex].choices[3]
+    document.getElementById('choice0').innerHTML = '1. ' + questionArray[questionIndex].choices[0]
+    document.getElementById('choice1').innerHTML = '2. ' + questionArray[questionIndex].choices[1]
+    document.getElementById('choice2').innerHTML = '3. ' + questionArray[questionIndex].choices[2]
+    document.getElementById('choice3').innerHTML = '4. ' + questionArray[questionIndex].choices[3]
     console.log('working?')
     questionIndex++
 console.log(questionIndex)
-
-if (questionArray[0] === 'choice0') {
-    answer === true
-}
-
 }
 console.log(questionIndex)
 
@@ -98,10 +98,13 @@ document.getElementById('choice1').addEventListener('click', changeQuestion)
 document.getElementById('choice2').addEventListener('click', changeQuestion)
 document.getElementById('choice3').addEventListener('click', changeQuestion)
 
-// choices = document.getElementsByClassName('choice');
-// if (choice0 || choice1 || choice2 || choice3) {
-//     choices.addEventListener('click', nextQuestion)
-// }
+choice0.addEventListener('click', function () {
+    if (choice0 === true); 
+    count++;
+    counter.textContent = count;
+    localStorage.setItem("count", count);
+    document.getElementById('answer-display').innerHTML = "correct"
+}) 
 
 
 
