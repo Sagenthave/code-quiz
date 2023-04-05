@@ -12,4 +12,7 @@ Tutor Assistance: Katie Redford / Abiel H.
 
 # Resources 
 - https://www.w3schools.com/jsref/prop_html_innerhtml.asp 
-- 
+
+# Deployment 
+- GitHub URl : https://github.com/Sagenthave/code-quiz
+- Deployed link : https://sagenthave.github.io/code-quiz/ 
